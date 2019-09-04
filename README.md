@@ -11,6 +11,12 @@ Email : vagnerlimanegreiros@gmail.com
 Senha : 123456
 ```
 
+## Configuração Necessária
+
+```
+Na Classe API você deve alterar o BASE_URL para o IP de sua máquina local.
+```
+
 
 ## Guia Rápido
 
