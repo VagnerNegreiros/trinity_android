@@ -1,6 +1,7 @@
 package br.com.vagnernegreiros.trinity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import br.com.vagnernegreiros.trinity.model.Usuario;
 import br.com.vagnernegreiros.trinity.util.PreferencesUtil;
 
@@ -19,6 +20,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        getWindow().setStatusBarColor(ContextCompat.getColor(this , R.color.colorStatusBar));
         findViews();
 
         String email = getIntent().getStringExtra("email");

@@ -8,5 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="RaisedButton" parent="Widget.AppCompat.Button.Colored">
+        <!-- Customize your theme here. -->
+        <item name="colorButtonNormal">@color/colorAccent</item>
+    </style>
+
+
 
 </resources>

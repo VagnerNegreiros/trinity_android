@@ -2,6 +2,8 @@
 
 Aplicação Mobile Android desenvolvido com Java.
 
+O projeto está com extrema dependência da API implementado em Java, para realizar o deploy seguir as instruções do repositório : https://github.com/VagnerNegreiros/trinity_backend
+
 ## Credenciais de Login
 
 ```
@@ -12,9 +14,7 @@ Senha : 123456
 
 ## Guia Rápido
 
-Para executar o projeto, você deve ter instaldo o Java , Android SDK e Android Studio.
-
-O projeto está com extrema dependência da API implementado em Java, para realizar o deploy seguir as instruções do repositório : https://github.com/VagnerNegreiros/trinity_backend
+Para executar o projeto, você deve ter instalado o Java , Android SDK e Android Studio.
 
 
 ### Pré-requisitos

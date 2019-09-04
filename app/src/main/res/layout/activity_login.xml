@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_login"
     tools:context=".LoginActivity">
 
     <ImageView
@@ -14,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:srcCompat="@mipmap/logo" />
 
     <EditText
         android:id="@+id/editTextEmail"
@@ -24,6 +25,10 @@
         android:ems="10"
         android:inputType="textEmailAddress"
         android:hint="Email"
+        android:drawableLeft="@drawable/ic_email"
+        android:drawablePadding="10dp"
+        android:textColor="#FFF"
+        android:textColorHint="#FFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -36,6 +41,10 @@
         android:ems="10"
         android:inputType="textPassword"
         android:hint="Senha"
+        android:drawableLeft="@drawable/ic_senha"
+        android:drawablePadding="10dp"
+        android:textColor="#FFF"
+        android:textColorHint="#FFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
@@ -47,6 +56,8 @@
         android:layout_marginTop="64dp"
         android:layout_marginEnd="40dp"
         android:text="Logar"
+        android:theme="@style/RaisedButton"
+        android:textColor="#FFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#3a51af"
     tools:context=".HomeActivity">
 
     <TextView
@@ -12,6 +13,7 @@
         android:layout_height="25dp"
         android:layout_marginTop="28dp"
         android:text="Logado : exemplo@exemplo.com"
+        android:textColor="#FFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,6 +25,8 @@
         android:layout_height="53dp"
         android:layout_marginTop="408dp"
         android:text="DESLOGAR"
+        android:textColor="#FFF"
+        android:theme="@style/RaisedButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
