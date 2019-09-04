@@ -1,6 +1,8 @@
 package br.com.vagnernegreiros.trinity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import br.com.vagnernegreiros.trinity.model.Usuario;
+import br.com.vagnernegreiros.trinity.util.PreferencesUtil;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,6 +28,7 @@ public class HomeActivity extends AppCompatActivity {
         buttonDeslogar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                PreferencesUtil.clearPrefs(getApplicationContext());
                 finish();
             }
         });

@@ -17,6 +17,10 @@ public class Usuario {
         this.user_password = user_password;
     }
 
+    public Usuario( String user_email) {
+        this.user_email = user_email;
+    }
+
     public Long getUser_id() {
         return user_id;
     }

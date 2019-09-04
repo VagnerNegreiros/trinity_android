@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import br.com.vagnernegreiros.trinity.api.API;
 import br.com.vagnernegreiros.trinity.model.Usuario;
 import br.com.vagnernegreiros.trinity.service.Service;
+import br.com.vagnernegreiros.trinity.util.PreferencesUtil;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -14,12 +15,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -45,6 +43,13 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+
+        // Obtendo usuário do preferences
+        Usuario usuario = PreferencesUtil.getUsuario(getApplicationContext());
+
+        if(!usuario.getUser_email().equals("")){
+            abrirTelaHome(usuario);
+        }
 
     }
 
@@ -84,9 +89,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Usuario>> call, Response<List<Usuario>> response) {
                 if(response.code() == 200){
-                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                    intent.putExtra("email", usuario.getUser_email());
-                    startActivity(intent);
+                    abrirTelaHome(usuario);
                 } else {
                     exibirAlertaErro("Atenção" , "Email ou senha inválidos.");
                 }
@@ -97,6 +100,15 @@ public class LoginActivity extends AppCompatActivity {
                 exibirAlertaErro("Erro" , "Ocorreu um erro no servidor");
             }
         });
+    }
+
+    private void abrirTelaHome(Usuario usuario){
+        // Salvando usuário no preferences
+        PreferencesUtil.saveUsuario(usuario , getApplicationContext());
+
+        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+        intent.putExtra("email", usuario.getUser_email());
+        startActivity(intent);
     }
 
     private void exibirAlertaErro(String titulo , String mensagem) {
